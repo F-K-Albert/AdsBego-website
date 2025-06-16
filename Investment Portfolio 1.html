@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertex Capital | Multi-Strategy Investments</title>
+  <link rel="stylesheet" href="Portfolio.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="Portfolio.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Vertex Capital</div>
+    <ul>
+      <li><a href="#strategies">Strategies</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#diagrams">Analytics</a></li>
+      <li><a href="Ask question.html" class="cta-button">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Strategic Investments Across Markets & Innovation</h1>
+    <p>Balancing liquidity, growth, and real assets for high-net-worth and institutional investors.</p>
+    <a href="Ask question.html" class="cta-button">Explore Opportunities</a>
+  </section>
+
+  <!-- Investment Strategies -->
+  <section id="strategies" class="strategies">
+    <h2>Our Investment Strategies</h2>
+    <div class="strategy-grid">
+      <div class="strategy-card">
+        <h3>Liquid Markets</h3>
+        <ul>
+          <li>Global Equities</li>
+          <li>Cryptocurrencies</li>
+          <li>Commodities</li>
+        </ul>
+      </div>
+      <div class="strategy-card">
+        <h3>Startups & VC</h3>
+        <ul>
+          <li>Early-Stage Tech</li>
+          <li>Fintech</li>
+          <li>AI & Blockchain</li>
+        </ul>
+      </div>
+      <div class="strategy-card">
+        <h3>Real Estate</h3>
+        <ul>
+          <li>Commercial</li>
+          <li>Multifamily</li>
+          <li>REITs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Showcase -->
+  <section id="portfolio" class="portfolio">
+    <h2>Portfolio Highlights</h2>
+    <div class="portfolio-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="liquid">Liquid</button>
+      <button class="filter-btn" data-filter="startups">Startups</button>
+      <button class="filter-btn" data-filter="real-estate">Real Estate</button>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item" data-category="liquid">
+        <h3>Crypto Hedge Fund</h3>
+        <p>+92% returns in 2023</p>
+      </div>
+      <div class="portfolio-item" data-category="startups">
+        <h3>AI Logistics Startup</h3>
+        <p>Exited at 5x valuation</p>
+      </div>
+      <div class="portfolio-item" data-category="real-estate">
+        <h3>Miami Luxury Condos</h3>
+        <p>$50M AUM, 12% IRR</p>
+      </div>
+      <div class="portfolio-item" data-category="liquid">
+        <h3>Tech ETF Portfolio</h3>
+        <p>24% annualized return</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diagrams Section -->
+  <section id="diagrams" class="diagrams">
+    <!-- Asset Allocation Pie Chart -->
+    <div class="diagram-section">
+      <h2>Asset Allocation</h2>
+      <div class="chart-container">
+        <canvas id="allocationChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Sector Exposure Bubble Chart -->
+    <div class="diagram-section">
+      <h2>Sector Exposure</h2>
+      <div id="bubbleChart"></div>
+    </div>
+
+    <!-- Performance Combo Chart -->
+    <div class="diagram-section">
+      <h2>5-Year Performance</h2>
+      <div class="chart-container">
+        <canvas id="performanceChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>For Accredited Investors</h2>
+    <form>
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <select>
+        <option>Investment Interest</option>
+        <option>Liquid Markets</option>
+        <option>Startups</option>
+        <option>Real Estate</option>
+      </select>
+      <button type="submit">Request Details</button>
+    </form>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

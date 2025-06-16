@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become an Investment Partner | [Your Company Name]</title>
+    <meta name="description" content="Join our exclusive network of investment partners. Grow your wealth with our expert portfolio management and strategic investment opportunities.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #1a2a57;
+            --secondary-color: #0056b3;
+            --accent-color: #ff6b35;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #28a745;
+            --error-color: #dc3545;
+            --warning-color: #ffc107;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        .menu-icon {
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+            display: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .signup-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+        
+        .signup-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .signup-header h2 {
+            color: var(--primary-color);
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        
+        .signup-header p {
+            color: #6c757d;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .form-group .required:after {
+            content: " *";
+            color: var(--error-color);
+        }
+        
+        .input-field {
+            padding: 14px 16px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.15);
+        }
+        
+        .password-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #6c757d;
+        }
+        
+        .investment-plan-group {
+            margin: 25px 0;
+        }
+        
+        .investment-plan-group h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .plan-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .plan-option {
+            padding: 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .plan-option:hover {
+            border-color: var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .plan-option.selected {
+            border-color: var(--secondary-color);
+            background-color: rgba(0, 86, 179, 0.03);
+        }
+        
+        .plan-option input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .plan-details {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .plan-details h4 {
+            color: var(--primary-color);
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .plan-details .roi {
+            color: var(--success-color);
+            font-weight: 600;
+        }
+        
+        .plan-details .min-investment {
+            font-weight: 600;
+        }
+        
+        .plan-details p {
+            color: #6c757d;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .benefits-list {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 8px;
+            color: #495057;
+            font-size: 14px;
+        }
+        
+        .terms-group {
+            display: flex;
+            align-items: flex-start;
+            margin: 25px 0;
+            gap: 10px;
+        }
+        
+        .terms-group input {
+            margin-top: 4px;
+        }
+        
+        .terms-group label {
+            font-size: 15px;
+            color: #495057;
+            line-height: 1.5;
+        }
+        
+        .terms-group a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .terms-group a:hover {
+            text-decoration: underline;
+        }
+        
+        .submit-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #004494;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 86, 179, 0.2);
+        }
+        
+        .login-link {
+            text-align: center;
+            margin-top: 25px;
+            color: #6c757d;
+            font-size: 16px;
+        }
+        
+        .login-link a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+        
+        .security-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .security-badge i {
+            color: var(--success-color);
+            font-size: 24px;
+        }
+        
+        .security-text {
+            font-size: 14px;
+            color: #6c757d;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #495057;
+            color: #adb5bd;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 20px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .signup-container {
+                margin: 30px 20px;
+                padding: 30px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 25px;
+            }
+            
+            .plan-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="Ads Bego.html" class="logo">[Company]<span>Capital</span></a>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="Ads Bego.html">Home</a></li>
+                <li><a href="Investment Portfolio 1.html">Portfolio</a></li>
+                <li><a href="Investment Plan.html">Investment Plans</a></li>
+                <li><a href="Join Us.html" class="active">Become a Partner</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="dashboardlogin.html">Client Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="signup-container">
+        <div class="signup-header">
+            <h2>Become an Investment Partner</h2>
+            <p>Join our exclusive network of investors and benefit from our expert portfolio management, strategic investment opportunities, and personalized wealth growth solutions.</p>
+        </div>
+        <form class="signup-form" id="partnerForm" action="/submit-partner-application" method="post">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name" class="required">First Name</label>
+                    <input type="text" id="first-name" name="first-name" class="input-field" placeholder="Enter your first name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="last-name" class="required">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" class="input-field" placeholder="Enter your last name" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email" class="required">Email Address</label>
+                    <input type="email" id="email" name="email" class="input-field" placeholder="Enter your professional email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" class="required">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="input-field" placeholder="+1 (___) ___-____" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="country" class="required">Country</label>
+                    <select id="country" name="country" class="input-field" required>
+                        <option value="">Select your country</option>
+                        <option value="US">United States</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="CA">Canada</option>
+                        <!-- Add more countries as needed -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" class="input-field" placeholder="Enter your city">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="id-number" class="required">Government ID Number</label>
+                <input type="text" id="id-number" name="id-number" class="input-field" placeholder="For KYC verification (SSN, Passport, etc.)" required>
+                <small class="text-muted">Your information is encrypted and securely stored</small>
+            </div>
+            
+            <div class="investment-plan-group">
+                <h3>Select Your Partnership Tier</h3>
+                <div class="plan-options">
+                    <label class="plan-option" onclick="selectPlan(this)">
+                        <input type="radio" name="investment-plan" value="silver" required>
+                        <div class="plan-details">
+                            <h4>Silver Partnership</h4>
+                            <div class="roi">12-18% Annual ROI</div>
+                            <div class="min-investment">Minimum: $10,000</div>
+                            <p>Ideal for new investors looking for stable growth with moderate risk.</p>
+                            <ul class="benefits-list">
+                                <li>Quarterly performance reports</li>
+                                <li>Access to core investment portfolio</li>
+                                <li>Dedicated account manager</li>
+                            </ul>
+                        </div>
+                    </label>
+                    
+                    <label class="plan-option" onclick="selectPlan(this)">
+                        <input type="radio" name="investment-plan" value="gold">
+                        <div class="plan-details">
+                            <h4>Gold Partnership</h4>
+                            <div class="roi">18-25% Annual ROI</div>
+                            <div class="min-investment">Minimum: $50,000</div>
+                            <p>For experienced investors seeking balanced growth and income.</p>
+                            <ul class="benefits-list">
+                                <li>Monthly performance reports</li>
+                                <li>Access to premium investment opportunities</li>
+                                <li>Priority support</li>
+                                <li>Quarterly strategy consultations</li>
+                            </ul>
+                        </div>
+                    </label>
+                    
+                    <label class="plan-option" onclick="selectPlan(this)">
+                        <input type="radio" name="investment-plan" value="platinum">
+                        <div class="plan-details">
+                            <h4>Platinum Partnership</h4>
+                            <div class="roi">25-35% Annual ROI</div>
+                            <div class="min-investment">Minimum: $250,000</div>
+                            <p>For sophisticated investors seeking maximum growth potential.</p>
+                            <ul class="benefits-list">
+                                <li>Weekly performance updates</li>
+                                <li>Exclusive access to private investments</li>
+                                <li>Personalized investment strategy</li>
+                                <li>24/7 VIP support</li>
+                                <li>Bi-monthly strategy sessions</li>
+                            </ul>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="investment-amount" class="required">Investment Amount (USD)</label>
+                <input type="number" id="investment-amount" name="investment-amount" class="input-field" placeholder="Enter your investment amount" min="10000" required>
+                <small id="amount-help" class="text-muted">Minimum investment varies by partnership tier</small>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="password" class="required">Create Password</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" class="input-field" placeholder="Minimum 12 characters" required minlength="12">
+                        <i class="fas fa-eye toggle-password" onclick="togglePassword('password', this)"></i>
+                    </div>
+                    <div id="password-strength" style="margin-top: 5px;"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password" class="required">Confirm Password</label>
+                    <div class="password-container">
+                        <input type="password" id="confirm-password" name="confirm-password" class="input-field" placeholder="Confirm your password" required>
+                        <i class="fas fa-eye toggle-password" onclick="togglePassword('confirm-password', this)"></i>
+                    </div>
+                    <div id="password-match" style="margin-top: 5px;"></div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="referral">Referral Code (Optional)</label>
+                <input type="text" id="referral" name="referral" class="input-field" placeholder="Enter referral code if applicable">
+            </div>
+            
+            <div class="form-group">
+                <label for="investment-goals">Investment Goals (Optional)</label>
+                <textarea id="investment-goals" name="investment-goals" class="input-field" placeholder="Briefly describe your investment objectives" rows="3"></textarea>
+            </div>
+            
+            <div class="terms-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">
+                    I agree to the <a href="Terms and Conditions.html" target="_blank">Terms of Service</a>, 
+                    <a href="Privacy Policy.html" target="_blank">Privacy Policy</a>, and acknowledge the 
+                    <a href="Risk Disclosure.html" target="_blank">Investment Risks</a>. I confirm that I am at least 18 years old and the information provided is accurate.
+                </label>
+            </div>
+            
+            <div class="terms-group">
+                <input type="checkbox" id="marketing" name="marketing">
+                <label for="marketing">
+                    I would like to receive occasional updates about investment opportunities and market insights.
+                </label>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Partnership Application</button>
+            
+            <div class="login-link">
+                Already a partner? <a href="dashboardlogin.html">Access your investor dashboard</a>
+            </div>
+            
+            <div class="security-badge">
+                <i class="fas fa-lock"></i>
+                <div class="security-text">
+                    Your information is protected with 256-bit SSL encryption. We never share your data with third parties.
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="Ask question.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Investments</h3>
+                <ul>
+                    <li><a href="strategies.html">Investment Strategies</a></li>
+                    <li><a href="performance.html">Performance</a></li>
+                    <li><a href="opportunities.html">Current Opportunities</a></li>
+                    <li><a href="research.html">Market Research</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="guides.html">Investment Guides</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="glossary.html">Glossary</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="Terms and Conditions.html">Terms of Service</a></li>
+                    <li><a href="Privacy Policy.html">Privacy Policy</a></li>
+                    <li><a href="disclosures.html">Disclosures</a></li>
+                    <li><a href="compliance.html">Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 Ads Bego Investment Company. All rights reserved. | SEC Registered Investment Advisor
+        </div>
+    </footer>
+
+    <script>
+        // Menu toggle functionality
+        function toggleMenu() {
+            var menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+        
+        // Password visibility toggle
+        function togglePassword(inputId, icon) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        }
+        
+        // Plan selection styling
+        function selectPlan(element) {
+            document.querySelectorAll('.plan-option').forEach(plan => {
+                plan.classList.remove('selected');
+            });
+            element.classList.add('selected');
+        }
+        
+        // Validate investment amount based on selected plan
+        document.querySelectorAll('input[name="investment-plan"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const amountInput = document.getElementById('investment-amount');
+                const helpText = document.getElementById('amount-help');
+                
+                switch(this.value) {
+                    case 'silver':
+                        amountInput.min = 10000;
+                        helpText.textContent = "Minimum investment: $10,000";
+                        break;
+                    case 'gold':
+                        amountInput.min = 50000;
+                        helpText.textContent = "Minimum investment: $50,000";
+                        break;
+                    case 'platinum':
+                        amountInput.min = 250000;
+                        helpText.textContent = "Minimum investment: $250,000";
+                        break;
+                }
+                
+                if (amountInput.value < amountInput.min) {
+                    amountInput.value = amountInput.min;
+                }
+            });
+        });
+        
+        // Password strength indicator
+        document.getElementById('password').addEventListener('input', function(e) {
+            const password = e.target.value;
+            const strengthIndicator = document.getElementById('password-strength');
+            
+            if (password.length === 0) {
+                strengthIndicator.textContent = '';
+                strengthIndicator.style.color = '';
+                return;
+            }
+            
+            // Simple strength evaluation (can be enhanced)
+            let strength = 0;
+            if (password.length >= 12) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+            
+            switch(strength) {
+                case 0:
+                case 1:
+                    strengthIndicator.textContent = 'Weak';
+                    strengthIndicator.style.color = 'var(--error-color)';
+                    break;
+                case 2:
+                    strengthIndicator.textContent = 'Moderate';
+                    strengthIndicator.style.color = 'var(--warning-color)';
+                    break;
+                case 3:
+                    strengthIndicator.textContent = 'Strong';
+                    strengthIndicator.style.color = 'var(--success-color)';
+                    break;
+                case 4:
+                    strengthIndicator.textContent = 'Very Strong';
+                    strengthIndicator.style.color = 'var(--success-color)';
+                    break;
+            }
+        });
+        
+        // Password match validation
+        document.getElementById('confirm-password').addEventListener('input', function(e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = e.target.value;
+            const matchIndicator = document.getElementById('password-match');
+            
+            if (confirmPassword.length === 0) {
+                matchIndicator.textContent = '';
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                matchIndicator.textContent = 'Passwords do not match';
+                matchIndicator.style.color = 'var(--error-color)';
+                e.target.style.borderColor = 'var(--error-color)';
+            } else {
+                matchIndicator.textContent = 'Passwords match';
+                matchIndicator.style.color = 'var(--success-color)';
+                e.target.style.borderColor = '#ced4da';
+            }
+        });
+        
+        // Form submission validation
+        document.getElementById('partnerForm').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const terms = document.getElementById('terms').checked;
+            
+            // Check password match
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('Passwords do not match. Please correct before submitting.');
+                document.getElementById('confirm-password').focus();
+                return;
+            }
+            
+            // Check password strength
+            if (password.length < 12) {
+                e.preventDefault();
+                alert('Password must be at least 12 characters long.');
+                document.getElementById('password').focus();
+                return;
+            }
+            
+            // Check terms agreement
+            if (!terms) {
+                e.preventDefault();
+                alert('You must agree to the terms and conditions to proceed.');
+                return;
+            }
+            
+            // Check investment amount meets minimum for selected plan
+            const selectedPlan = document.querySelector('input[name="investment-plan"]:checked');
+            const investmentAmount = parseFloat(document.getElementById('investment-amount').value);
+            
+            if (selectedPlan) {
+                let minAmount;
+                switch(selectedPlan.value) {
+                    case 'silver': minAmount = 10000; break;
+                    case 'gold': minAmount = 50000; break;
+                    case 'platinum': minAmount = 250000; break;
+                }
+                
+                if (investmentAmount < minAmount) {
+                    e.preventDefault();
+                    alert(`Minimum investment for the selected plan is $${minAmount.toLocaleString()}. Please adjust your investment amount.`);
+                    document.getElementById('investment-amount').focus();
+                    return;
+                }
+            }
+            
+            // If all validations pass, form will submit
+            // You might want to add a loading indicator here
+            document.querySelector('.submit-btn').textContent = 'Processing...';
+            document.querySelector('.submit-btn').disabled = true;
+        });
+        
+        // Phone number formatting
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let phone = e.target.value.replace(/\D/g, '');
+            if (phone.length > 0) {
+                phone = phone.match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+                e.target.value = !phone[2] ? phone[1] : '(' + phone[1] + ') ' + phone[2] + (phone[3] ? '-' + phone[3] : '');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADS BEGO Investment Timeline</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Ads Bego Logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776; Menu</div>
+    <ul class="menu-list" id="menuList">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Investment Portfolio.html">Investment Portfolio</a></li>
+        <li><a href="Investment Plan.html">Investment Plan</a></li>
+        <li><a href="Join Us.html">Join Us</a></li>
+        <li><a href="Ask question.html">Ask Question</a></li>
+        <li><a href="dashboardlogin.html">My Account</a></li>
+    </ul>
+        <header>
+            <h1>ADS BEGO Annual Investment Timeline</h1>
+            <p style="color: rgb(255, 255, 255);">Visualizing our strategic investment approach throughout the fiscal year</p>
+        </header>
+
+        <div class="timeline-container">
+            <!-- Embedded timeline image as data URL -->
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgMzAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJQb3BwaW5zIiBmb250LXNpemU9IjI0cHgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYTQ3MmEiPkFubnVhbCBJbnZlc3RtZW50IFRpbWVsaW5lPC90ZXh0PjxwYXRoIGQ9Ik0xNTAgMjAwIEg3NTAgTTE1MCAyMDAgTDIwMCAxNTAgTTE1MCAyMDAgTDIwMCAyNTAiIHN0cm9rZT0iIzFhNDcyYSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMjAwIiByPSIxMCIgZmlsbD0iIzFhNDcyYSIvPjxjaXJjbGUgY3g9IjMwMCIgY3k9IjIwMCIgcj0iMTAiIGZpbGw9IiMxYTQ3MmEiLz48Y2lyY2xlIGN4PSI0NTAiIGN5PSIyMDAiIHI9IjEwIiBmaWxsPSIjMWE0NzJhIi8+PGNpcmNsZSBjeD0iNjAwIiBjeT0iMjAwIiByPSIxMCIgZmlsbD0iIzFhNDcyYSIvPjxjaXJjbGUgY3g9Ijc1MCIgY3k9IjIwMCIgcj0iMTAiIGZpbGw9IiMxYTQ3MmEiLz48dGV4dCB4PSIxNTAiIHk9IjE3MCIgZm9udC1mYW1pbHk9IlBvcHBpbnMiIGZvbnQtc2l6ZT0iMTRweCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzJjM2U1MCI+SmFuPC90ZXh0Pjx0ZXh0IHg9IjMwMCIgeT0iMTcwIiBmb250LWZhbWlseT0iUG9wcGlucyIgZm9udC1zaXplPSIxNHB4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMmMzZTUwIj5NYXI8L3RleHQ+PHRleHQgeD0iNDUwIiB5PSIxNzAiIGZvbnQtZmFtaWx5PSJQb3BwaW5zIiBmb250LXNpemU9IjE0cHgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMyYzNlNTAiPkp1bjwvdGV4dD48dGV4dCB4PSI2MDAiIHk9IjE3MCIgZm9udC1mYW1pbHk9IlBvcHBpbnMiIGZvbnQtc2l6ZT0iMTRweCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzJjM2U1MCI+U2VwPC90ZXh0Pjx0ZXh0IHg9Ijc1MCIgeT0iMTcwIiBmb250LWZhbWlseT0iUG9wcGlucyIgZm9udC1zaXplPSIxNHB4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMmMzZTUwIj5EZWM8L3RleHQ+PC9zdmc+" 
+                 alt="Investment Timeline showing monthly progression" 
+                 class="timeline-image" />
+
+            <!-- Tooltip markers -->
+            <div class="tooltip-point" tabindex="0" data-index="1" aria-label="January investment phase">
+                <div class="tooltip-text">
+                    <strong>January</strong>
+                    Crypto investment begins with 40% portfolio allocation
+                </div>
+            </div>
+            <div class="tooltip-point" tabindex="0" data-index="2" aria-label="March investment phase">
+                <div class="tooltip-text">
+                    <strong>March</strong>
+                    Commodities phase starts with 20% allocation
+                </div>
+            </div>
+            <div class="tooltip-point" tabindex="0" data-index="3" aria-label="June investment phase">
+                <div class="tooltip-text">
+                    <strong>June</strong>
+                    Stocks investment begins with 30% allocation
+                </div>
+            </div>
+            <div class="tooltip-point" tabindex="0" data-index="4" aria-label="September investment phase">
+                <div class="tooltip-text">
+                    <strong>September</strong>
+                    Additional stock allocations (total 45%)
+                </div>
+            </div>
+            <div class="tooltip-point" tabindex="0" data-index="5" aria-label="December investment phase">
+                <div class="tooltip-text">
+                    <strong>December</strong>
+                    Final phase in commodities (rebalancing to 25%)
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Investment Timeline Overview</h2>
+            <p>
+                ADS BEGO follows a phased investment strategy to build a diversified portfolio. Our annual timeline illustrates key phases and allocations across various asset classes. Each phase is designed to optimize returns while managing risk, ensuring a balanced approach to wealth creation.
+            </p>
+            <h3>Investment Phases</h3>
+            <ul>
+                <li><strong>January:</strong> Crypto investment begins with 40% portfolio allocation</li>
+                <li><strong>March:</strong> Commodities phase starts with 20% allocation</li>
+                <li><strong>June:</strong> Stocks investment begins with 30% allocation</li>
+                <li><strong>September:</strong> Additional stock allocations (total 45%)</li>
+                <li><strong>December:</strong> Final phase in commodities (rebalancing to 25%)</li>
+            </ul>
+        </div>
+    
+        <footer class="footer">
+            <p>ADS BEGO is committed to transparency and strategic growth. Our annual investment timeline illustrates our phased approach to building a diversified portfolio.</p>
+            <p>Join us today and take the first step towards a brighter financial future!</p>
+           <p> © ADS BEGO Investments • Strategic Portfolio Management</p>
+            <ul>
+            <li><a href="https://www.facebook.com/AdsBego" target="_blank"><b>Facebook</b></a></li>
+            <li><a href="https://www.twitter.com/AdsBego" target="_blank"><b>Twitter</b></a></li>
+            <li><a href="https://www.instagram.com/AdsBego" target="_blank"><b>Instagram</b></a></li>
+            <li><a href="https://www.linkedin.com/company/adsbego" target="_blank"><b>LinkedIn</b></a></li>
+            <li><a href="https://www.youtube.com/channel/AdsBego" target="_blank"> <b>Youtube</b></a></li>
+        </ul>
+        </footer>
+</body>
+</html>

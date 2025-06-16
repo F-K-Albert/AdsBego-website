@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Ads Bego Investment Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="Ads Bego Logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css">
+    
+
+</head>
+
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776; Menu</div>
+    <ul class="menu-list" id="menuList">
+        <li><a href="About Us.html">Home</a></li>
+        <li><a href="Investment Portfolio.html">Investment Portfolio</a></li>
+        <li><a href="Investment Plan.html">Investment Plan</a></li>
+        <li><a href="Join Us.html">Join Us</a></li>
+        <li><a href="Ask qestion.html">Ask Question</a></li>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </ul>
+    <header>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Mobile Menu Button -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    
+    <!-- Header with Animation -->
+    <header class="header-animate">
+        <img src="Ads Bego Logo.png" alt="Ads Bego Investment Logo" width="90" height="90" class="logo-hover">
+        <h1>Ads Bego Investment Company</h1>
+        <p>Invest in Your Future with Confidence</p>
+        <a href="Join Us.html">
+            <button id="joinUsBtn" class="pulse-animation">
+                Start Investing Today <i class="fas fa-arrow-right"></i>
+            </button>
+        </a>
+    </header></button>
+    <div class="container">
+        <h2 class="typeWriter">We'd Love to Hear From You</h2>
+        <p style="color: rgb(10, 10, 10);">At Ads Bego Investment Company, we value every opportunity to connect with our clients and potential investors. Whether you have questions about our services, need guidance on investment strategies, or simply want to share feedback, our team is here to provide personalized assistance.</p>
+        
+        <!-- WhatsApp Group Link Added Here -->
+        <div style="text-align: center; margin: 20px 0;">
+            <a href="https://chat.whatsapp.com/0202572216" target="_blank" style="background-color: #25D366; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+                <i class="fab fa-whatsapp"></i> Join Our WhatsApp Group
+            </a>
+        </div>
+        
+        <!-- Interactive Form with Validation -->
+        <form id="contactForm" class="form-validate">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                <span class="input-icon"><i class="fas fa-user"></i></span>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="How can we help you?" required>
+                <span class="input-icon"><i class="fas fa-tag"></i></span>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your investment goals or questions..." required></textarea>
+                <span class="input-icon"><i class="fas fa-comment-alt"></i></span>
+                <div class="error-message"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+            </button>
+
+            <div class="form-success" id="formSuccess">
+                <i class="fas fa-check-circle"></i>
+                <p>Thank you! Your message has been sent successfully.</p>
+            </div>
+        </form>
+
+        <!-- Interactive Contact Cards -->
+        <div class="contact-cards">
+            <div class="contact-card" onmouseover="tiltCard(this)" onmouseout="resetCard(this)">
+                <div class="card-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h3>Email Us</h3>
+                <p><a href="mailto:AdsBegoinvestment@gmail.com">AdsBegoInvestment@gmail.com</a></p>
+                <button class="card-btn" onclick="copyToClipboard('AdsBegoInvestment@gmail.com')">Copy Email</button>
+            </div>
+            
+            <div class="contact-card" onmouseover="tiltCard(this)" onmouseout="resetCard(this)">
+                <div class="card-icon"><i class="fas fa-phone-alt"></i></div>
+                <h3>Call Us</h3>
+                <p><a href="tel:+233202572216">+233 202 572216</a></p>
+                <button class="card-btn" onclick="copyToClipboard('0594166010')">Copy Number</button>
+            </div>
+            
+            <div class="contact-card" onmouseover="tiltCard(this)" onmouseout="resetCard(this)">
+                <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>Visit Us</h3>
+                <p>123 Finance Ave, Suite 100</p>
+                <button class="card-btn" onclick="showMap()">View Map</button>
+            </div>
+        </div>
+
+        <!-- Business Hours with Toggle -->
+        <div class="business-hours">
+            <div class="hours-header" onclick="toggleHours()">
+                <h3><i class="far fa-clock"></i> Business Hours <span id="hoursToggle">+</span></h3>
+            </div>
+            <div class="hours-content" id="hoursContent">
+                <p><span>Monday-Friday:</span> 9:00 AM - 6:00 PM</p>
+                <p><span>Saturday:</span> 10:00 AM - 2:00 PM</p>
+                <p><span>Sunday:</span> Closed</p>
+                <p>Feel free to reach out during these hours for immediate assistance.</p>
+                <br>
+            </div>
+        </div>
+
+        <!-- Live Chat Button -->
+        <div class="live-chat" id="liveChat">
+            <button class="chat-btn" onclick="openChat()">
+                <i class="fas fa-comments"></i> Live Chat
+            </button>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Join us today and take the first step towards a brighter financial future!</p>
+        <p>&copy; 2023 ADS BEGO. All rights reserved.</p>
+        <p>Contact us at: <a href="mailto:AdsBego@gmail.com">AdsBego@gmail.com</a></p>
+        <p>Follow us on social media:</p>
+        <ul>
+            <li><a href="https://www.facebook.com/AdsBego" target="_blank"><b>Facebook</b></a></li>
+            <li><a href="https://www.twitter.com/AdsBego" target="_blank"><b>Twitter</b></a></li>
+            <li><a href="https://www.instagram.com/AdsBego" target="_blank"><b>Instagram</b></a></li>
+            <li><a href="https://www.linkedin.com/company/adsbego" target="_blank"><b>LinkedIn</b></a></li>
+            <li><a href="https://www.youtube.com/channel/AdsBego" target="_blank"> <b>Youtube</b></a></li>
+        </ul>
+    </footer>
+   
+    <script>
+        // Current year for footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Simulate form submission
+            document.getElementById('formSuccess').style.display = 'flex';
+            setTimeout(function() {
+                document.getElementById('formSuccess').style.display = 'none';
+                document.getElementById('contactForm').reset();
+            }, 3000);
+        });
+        
+        // Toggle business hours
+        function toggleHours() {
+            const content = document.getElementById('hoursContent');
+            const toggle = document.getElementById('hoursToggle');
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                toggle.textContent = '+';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                toggle.textContent = '-';
+            }
+        }
+        
+        // Card tilt effect
+        function tiltCard(card) {
+            card.style.transform = 'perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.05)';
+            card.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+        }
+        
+        function resetCard(card) {
+            card.style.transform = '';
+            card.style.boxShadow = '';
+        }
+        
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Copied to clipboard: ' + text);
+            }, function() {
+                alert('Could not copy text');
+            });
+        }
+        
+        // Show loading animation
+        window.addEventListener('load', function() {
+            document.getElementById('loader').style.display = 'none';
+        });
+        
+        // Back to top button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById('backToTop').style.display = 'block';
+            } else {
+                document.getElementById('backToTop').style.display = 'none';
+            }
+        };
+        
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+        
+        // Typewriter effect
+        function typeWriter() {
+            const element = document.querySelector('.typeWriter');
+            element.style.opacity = '0';
+            const text = element.textContent;
+            element.textContent = '';
+            let i = 0;
+            function typing() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typing, 50);
+                }
+            }
+            typing();
+        }
+        
+        // Initialize animations when page loads
+        window.onload = function() {
+            typeWriter();
+            document.querySelector('.welcome-message').style.opacity = '1';
+        };
+
+        
+        // Show loading animation
+        window.addEventListener('load', function() {
+            document.getElementById('loader').style.display = 'none';
+        });
+        
+        // Back to top button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById('backToTop').style.display = 'block';
+            } else {
+                document.getElementById('backToTop').style.display = 'none';
+            }
+        };
+        
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Open live chat
+        function openChat() {
+            window.open('https://chat.whatsapp.com/0202572216', '_blank');
+        }
+        // Show map function
+
+
+    </script>
+</body>
+</html>
